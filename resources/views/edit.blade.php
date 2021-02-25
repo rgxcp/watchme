@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- Form untuk mengubah sebuah data -->
     <form action="{{ route('watchlists.update', $watchlist) }}" method="POST">
         @method('PUT')
         @csrf

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class WatchlistController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Menampilkan view seluruh data.
      *
      * @return \Illuminate\Http\Response
      */
@@ -22,7 +22,7 @@ class WatchlistController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Menambahkan sebuah data.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -35,7 +35,7 @@ class WatchlistController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Menampilkan view sebuah data untuk diubah.
      *
      * @param  \App\Models\Watchlist  $watchlist
      * @return \Illuminate\Http\Response
@@ -48,7 +48,7 @@ class WatchlistController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Mengubah sebuah data.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Watchlist  $watchlist
@@ -62,7 +62,7 @@ class WatchlistController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Menghapus sebuah data.
      *
      * @param  \App\Models\Watchlist  $watchlist
      * @return \Illuminate\Http\Response

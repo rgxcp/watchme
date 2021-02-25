@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- Form untuk menambahkan sebuah data -->
     <form action="{{ route('watchlists.store') }}" method="POST">
         @csrf
         <label>Film Title:</label>
@@ -18,6 +19,7 @@
         <br>
     </form>
 
+    <!-- Table untuk menampilkan seluruh data -->
     <table>
         <tr>
             <th>Film Title</th>
@@ -25,15 +27,18 @@
             <th>Updated At</th>
             <th>Action</th>
         </tr>
+        <!-- Looping data yang dikirim oleh file Controller -->
         @foreach($watchlists as $watchlist)
         <tr>
             <td>{{ $watchlist->film_title }}</td>
             <td>{{ $watchlist->created_at }}</td>
             <td>{{ $watchlist->updated_at }}</td>
             <td>
+                <!-- Button untuk mengubah sebuah data -->
                 <a href="{{ route('watchlists.edit', $watchlist) }}">
                     <button>Edit</button>
                 </a>
+                <!-- Button untuk menghapus sebuah data -->
                 <form action="{{ route('watchlists.destroy', $watchlist) }}" method="POST">
                     @method('DELETE')
                     @csrf

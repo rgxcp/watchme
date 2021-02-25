@@ -14,4 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Alamat website.
+ *
+ * GET    /watchlists
+ * GET    /watchlists/{watchlist}/edit
+ * POST   /watchlists
+ * PUT    /watchlists/{watchlist}
+ * DELETE /watchlists/{watchlist}
+ */
 Route::resource('watchlists', WatchlistController::class)->except(['create', 'show']);
