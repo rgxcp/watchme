@@ -27,11 +27,15 @@ class WatchlistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)             // 1, 2
     {
-        Watchlist::create($request->all());
+        $request->validate([                            // 3, 4
+            'film_title' => ['required']
+        ]);
 
-        return redirect()->route('watchlists.index');
+        Watchlist::create($request->all());             // 5
+
+        return redirect()->route('watchlists.index');   // 6, 7
     }
 
     /**
@@ -54,11 +58,15 @@ class WatchlistController extends Controller
      * @param  \App\Models\Watchlist  $watchlist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Watchlist $watchlist)
+    public function update(Request $request, Watchlist $watchlist)  // 1, 2
     {
-        $watchlist->update($request->all());
+        $request->validate([                                        // 3, 4
+            'film_title' => ['required']
+        ]);
 
-        return redirect()->route('watchlists.index');
+        $watchlist->update($request->all());                        // 5
+
+        return redirect()->route('watchlists.index');               // 6, 7
     }
 
     /**

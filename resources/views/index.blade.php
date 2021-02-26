@@ -9,6 +9,17 @@
 </head>
 
 <body>
+    <!-- Validasi Error -->
+    @if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <!-- Form untuk menambahkan sebuah data -->
     <form action="{{ route('watchlists.store') }}" method="POST">
         @csrf
@@ -28,7 +39,7 @@
             <th>Action</th>
         </tr>
         <!-- Looping data yang dikirim oleh file Controller -->
-        @foreach($watchlists as $watchlist)
+        @foreach ($watchlists as $watchlist)
         <tr>
             <td>{{ $watchlist->film_title }}</td>
             <td>{{ $watchlist->created_at }}</td>

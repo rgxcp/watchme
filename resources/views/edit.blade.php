@@ -9,6 +9,17 @@
 </head>
 
 <body>
+    <!-- Validasi Error -->
+    @if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <!-- Form untuk mengubah sebuah data -->
     <form action="{{ route('watchlists.update', $watchlist) }}" method="POST">
         @method('PUT')
