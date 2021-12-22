@@ -1,7 +1,5 @@
-# ⏱️ PHP - Laravel - Watchme
-**EN**: Website for managing film watchlist.
-
-**ID**: Website untuk mengelola watchlist film.
+# ⏱️ Watchme
+Website for managing film watchlist.
 
 ## Status
 END OF LIFE
